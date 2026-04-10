@@ -1,0 +1,433 @@
+<head>
+  <style>
+    body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(#1a1a22, #2a1f2f);
+  color: #e5e5e5;
+  margin: 0;
+  padding: 20px 20px 60px 20px;
+  text-align: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* title */
+h1 {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 36px;
+  color: #d6b3ff;
+  margin-bottom: 20px;
+}
+
+/* container */
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #3a2a40;
+}
+
+/* cards */
+.card {
+  background: linear-gradient(#2a2230, #1c1c24);
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  border: 1px solid #4a3a55;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* headings */
+h3 {
+  font-size: 13px;
+  color: #c084fc;
+  margin: 0 0 6px 0;
+}
+
+/* paragraph inside cards */
+.card p {
+  font-size: 12px;
+  color: #d1d1d1;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.7;
+}
+
+/* dropdowns */
+select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  background: #120f18;
+  color: #fff;
+  border: 1px solid #4a3a55;
+}
+
+/* button */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  color: white;
+  font-size: 15px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+/* result */
+#result {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #f9a8d4;
+}
+
+/* history items */
+#history div {
+  font-size: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid #3a2a40;
+  opacity: 0.85;
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+}
+
+/* 💻 Desktop */
+@media (min-width: 900px) {
+  .container {
+    max-width: 600px;
+  }
+}
+.card label {
+  font-size: 14px;
+  color: #e5e5e5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+.card input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #a855f7;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <head>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<h1>✧ My Daily Ritual ✧</h1>
+<div class="card">
+  <h3>✨ Daily Quote</h3>
+  <p id="quote">Loading quote...</p>
+</div>
+<div class="container">
+
+  <h3 id="streak">🔥 Streak: 0</h3>
+
+  <!-- HOW TO USE -->
+  <div class="card">
+    <h3>How to use</h3>
+    <p style="opacity:0.6;">
+      This is a diet that is based on a point system. There are 5 separate categories that you can get points from, calorie intake, exercise, water intake, sleep and also a bonus category. To start of, begin with a 20 points a day requirement. When that becomes easy (when you achieve this goal for a few weeks for example) then increase your daily requirement to 30 points, until you are eventually achieving 40 points a day. Try not to get too many points off the Bonus section. For doing your required points for one week in a row, reward yourself with something nice, like new clothing, accessories, get a new game or DLC’s for your favorites, buy some music, ect. (just don’t waste your efforts and buy junk food.)
+    </p>
+  </div>
+
+  <!-- INTAKE -->
+  <div class="card">
+    <h3>Calorie Intake</h3>
+    <select id="intake">
+      <option value="10">0-200 (10 pts)</option>
+      <option value="8">201-350 (8 pts)</option>
+      <option value="5">351-500 (5 pts)</option>
+      <option value="3">501-600 (3 pts)</option>
+      <option value="1">601-750 (1 pt)</option>
+      <option value="0">over 750 (0 pts)</option>
+    </select>
+  </div>
+
+  <!-- EXERCISE -->
+  <div class="card">
+    <h3>Exercise</h3>
+    <select id="exercise">
+      <option value="0">none (0)</option>
+      <option value="2">15 minutes (2)</option>
+      <option value="5">30 minutes (5)</option>
+      <option value="8">45 minutes (8)</option>
+      <option value="10">1+ hours (10)</option>
+      <option value="2">1 hour bicycle / 45 min walk (bonus +2)</option>
+    </select>
+  </div>
+
+  <!-- WATER -->
+  <div class="card">
+    <h3>Water Intake</h3>
+    <select id="water">
+      <option value="0">0 glasses</option>
+      <option value="1">1 glass</option>
+      <option value="2">2 glasses</option>
+      <option value="3">3 glasses</option>
+      <option value="4">4 glasses</option>
+      <option value="6">5 glasses</option>
+      <option value="7">6 glasses</option>
+      <option value="8">7 glasses</option>
+      <option value="9">8 glasses</option>
+      <option value="10">9 glasses</option>
+    </select>
+  </div>
+
+  <!-- SLEEP -->
+  <div class="card">
+    <h3>Sleeping Hours</h3>
+    <select id="sleep">
+      <option value="10">8+ hours</option>
+      <option value="8">7 hours</option>
+      <option value="7">6 hours</option>
+      <option value="5">5 hours</option>
+      <option value="4">4 hours</option>
+      <option value="2">3 hours</option>
+      <option value="0">2 hours or less</option>
+    </select>
+  </div>
+
+  <!-- BONUS -->
+  <div class="card">
+    <h3>Bonus</h3>
+    <select id="bonus">
+      <option value="0">None (0)</option>
+      <option value="3">Updating your journal or site (+3)</option>
+      <option value="2">No binging  (+2)</option>
+      <option value="2">Posting thinspiration (+2)</option>
+      <option value="2">Recording calories (+2)</option>
+    </select>
+  </div>
+
+  <!-- BUTTON -->
+  <button onclick="calculate()">Calculate</button>
+
+  <!-- RESULT -->
+  <h2 id="result">Score: 0</h2>
+
+  <!-- DASHBOARD -->
+  <div class="card">
+    <h3>📊 Weekly Average</h3>
+    <p id="weeklyAvg">Average: 0</p>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="card">
+    <h3>📅 History</h3>
+    <div id="history"></div>
+  </div>
+
+</div>
+
+<script>
+  // JS goes here
+</script>
+
+</body>
+</html>
+
+  <script>
+    function calculate() {
+  let intake = Number(document.getElementById("intake").value);
+  let exercise = Number(document.getElementById("exercise").value);
+  let water = Number(document.getElementById("water").value);
+  let sleep = Number(document.getElementById("sleep").value);
+  let bonus = Number(document.getElementById("bonus").value);
+
+  let total = intake + exercise + water + sleep + bonus;
+
+  document.getElementById("result").innerText = "Score: " + total;
+
+  showPopup(total);
+  saveDay(total);
+}
+
+function showPopup(score) {
+  let popup = document.createElement("div");
+  popup.innerText = "Score: " + score;
+
+  popup.style.position = "fixed";
+  popup.style.top = "20px";
+  popup.style.left = "50%";
+  popup.style.transform = "translateX(-50%)";
+  popup.style.background = "#2a2230";
+  popup.style.color = "#f9a8d4";
+  popup.style.padding = "12px 20px";
+  popup.style.borderRadius = "12px";
+  popup.style.border = "1px solid #a855f7";
+  popup.style.boxShadow = "0 0 15px rgba(168,85,247,0.5)";
+  popup.style.zIndex = "9999";
+
+  document.body.appendChild(popup);
+
+  setTimeout(() => popup.remove(), 1500);
+}
+
+function saveDay(score) {
+  let today = new Date().toDateString();
+
+  let data = JSON.parse(localStorage.getItem("history")) || {};
+
+  data[today] = score;
+
+  localStorage.setItem("history", JSON.stringify(data));
+
+  updateStreak(data);
+  renderHistory(data);
+}
+
+function renderHistory(data) {
+  let container = document.getElementById("history");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  let entries = Object.entries(data)
+    .sort((a, b) => new Date(b[0]) - new Date(a[0]));
+
+  for (let [date, score] of entries) {
+    let div = document.createElement("div");
+    div.style.padding = "6px 0";
+    div.style.borderBottom = "1px solid #3a2a40";
+    div.innerHTML = `${date} → <b>${score} pts</b>`;
+    container.appendChild(div);
+  }
+}
+
+function updateStreak(data) {
+  let dates = Object.keys(data)
+    .map(d => new Date(d))
+    .sort((a, b) => b - a);
+
+  let streak = 0;
+  let today = new Date();
+
+  for (let i = 0; i < dates.length; i++) {
+    let diff = Math.floor((today - dates[i]) / (1000 * 60 * 60 * 24));
+
+    if (diff === streak) {
+      streak++;
+    } else {
+      break;
+    }
+  }
+
+  localStorage.setItem("streak", streak);
+  document.getElementById("streak").innerText = "🔥 Streak: " + streak;
+}
+const quotes = [
+  "You will be FAT if you eat today, just put it off one more day.",
+  "You don't NEED food.",
+  "Fat people can't fit everywhere.",
+  "Guys will be able to pick you up without struggling.",
+  "You'll be able to run faster without all that extra weight holding you back.",
+  "People will remember you as the beautiful thin one.",
+  "If someone has to describe you, they'll say oh she weighs like 90, 100 lbs.",
+  "Guys will want to get to know you, not laugh at you and walk away.",
+  "Starving is an example of excellent willpower.",
+  "You will be able to see your beautiful, beautiful bones.",
+  "Bones are clean and pure. Fat is dirty and hangs on your bones like a parasite.",
+  "If you eat then you'll look like those disgusting, fat, ghetto and trailer-trash hookers on Jerry Springer.",
+  "The models that everyone claims are beautiful, the spitting image of perfection, are any of them fat? NO!",
+  "Too many people in the world are obese.",
+  "People who eat are selfish and unrealistic.",
+  "Only fat people are attracted to fat people. Do you want pigs to like you because you are one of them.",
+  "Anyone can have inner beauty but few can earn real beauty, inside as well as out.",
+  "You'll be able to move as quietly and skillfully as a spider.",
+  "Only thin people are graceful.",
+  "If you slap a fat person you can see a shockwave ripple over their skin. That's disgusting.",
+  "Do you want people to say for gods sake get off me you're crushing me!!! or you are sooo light ???",
+  "Underweight aka perfect body.",
+  "Ballerina? or beanbag?",
+  "I want to be light enough so a helium balloon could lift me and carry me to the clouds.",
+  "I want to walk in the snow and leave no footprints.",
+  "Starve off the parts you don't need. They're ugly and they drag you down.",
+  "Nothing cant be fixed with hunger and weight loss.",
+  "Saying no thanks to food is saying yes please to THIN!!!",
+  "Fat people are so huge, yet people look away from them as if they don't exist.",
+  "The only time people do notice a fat person is when they get in the way of that beautiful thin girl walking by (ok that sounds really horrible i know.)",
+  "Have you ever seen a person NOT notice a walking skeleton.",
+  "Nothing tastes as good as thin feels.",
+  "Is food more important that happiness in life? I think not!",
+  "Eating is conforming to everyone else's expectations.",
+  "When you start to get dizzy and weak you're almost there.",
+  "Hunger is your friend and it won't betray you like food.",
+  "Food is mean and sneaky. It tricks you into eating it and it works on you from the inside out making you fat, bloated, ugly and unhappy.",
+  "Think of anorexia as your secret weapon.",
+  "If you can name one reason to be fat, I'll name a million and one to be thin.",
+  "Thin people look good in ANY kind of clothes.",
+  "Food rots your teeth.",
+  "Puffy cheeks, double chins and thick ankles-- aren't attractive.",
+  "Fatty areas stretch and sag as you get older.",
+  "Ever seen the arms of a fat person wave hello or goodbye?",
+  "Eating little to nothing saves you money!",
+  "The average (middle class) American wastes OVER $8,000 a year on FOOD ALONE...it goes in one end and out the other. That sure is a lot of fat! No wonder so many Americans are obese and overweight!",
+  "Fat people make their country look bad.",
+  "Big people sweat more and they smell bad.",
+  "Fat people die earlier.",
+  "You'll be the envy of all the other girls.",
+  "All of the guys will want you.",
+  "You're less likely to get food poisoning.",
+  "You won't be exposed to all the chemicals and pesticides they put in food today.",
+  "You won't get sweaty on hot days.",
+  "The word fat will only apply to you in a sarcastic way.",
+  "No one wants to see a fat person dance.",
+  "Beauty Queen? or Dairy Queen?",
+];
+
+function getRandomQuote() {
+  return quotes[Math.floor(Math.random() * quotes.length)];
+}
+
+function renderQuote() {
+  let quoteEl = document.getElementById("quote");
+  if (!quoteEl) return;
+
+  quoteEl.innerText = getRandomQuote();
+}
+window.onload = function () {
+  let data = JSON.parse(localStorage.getItem("history")) || {};
+  let streak = localStorage.getItem("streak") || 0;
+
+  document.getElementById("streak").innerText = "🔥 Streak: " + streak;
+
+  renderHistory(data);
+  renderQuote(); // 👈 add this
+};
+
+
+  </script>
+
+</body>
