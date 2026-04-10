@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title></title>
-
-  <!-- ===================== -->
-  body {
+  <style>
+    body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(#1a1a22, #2a1f2f);
   color: #e5e5e5;
@@ -140,14 +133,11 @@ button {
 }
 
 
-  <!-- ===================== -->
-  <link rel="stylesheet" href="">
-
+  </style>
 </head>
 
 <body>
 
-  <!-- ===================== -->
   <head>
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -267,13 +257,9 @@ button {
 
 </body>
 </html>
-  <!-- ===================== -->
 
-
-
-
-  <!-- ===================== -->
-  function calculate() {
+  <script>
+    function calculate() {
   let intake = Number(document.getElementById("intake").value);
   let exercise = Number(document.getElementById("exercise").value);
   let water = Number(document.getElementById("water").value);
@@ -442,8 +428,6 @@ window.onload = function () {
 };
 
 
-  <!-- ===================== -->
-  <script src=""></script>
+  </script>
 
 </body>
-</html>
