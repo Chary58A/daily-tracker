@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter&display=swap" rel="stylesheet">
+  <title></title>
 
-  <style>
-    body {
+  <!-- ===================== -->
+  body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(#1a1a22, #2a1f2f);
   color: #e5e5e5;
@@ -140,11 +140,14 @@ button {
 }
 
 
-  </style>
+  <!-- ===================== -->
+  <link rel="stylesheet" href="">
+
 </head>
 
 <body>
 
+  <!-- ===================== -->
   <head>
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -153,7 +156,10 @@ button {
 <body>
 
 <h1>✧ My Daily Ritual ✧</h1>
-
+<div class="card">
+  <h3>✨ Daily Quote</h3>
+  <p id="quote">Loading quote...</p>
+</div>
 <div class="container">
 
   <h3 id="streak">🔥 Streak: 0</h3>
@@ -261,9 +267,13 @@ button {
 
 </body>
 </html>
+  <!-- ===================== -->
 
-  <script>
-    function calculate() {
+
+
+
+  <!-- ===================== -->
+  function calculate() {
   let intake = Number(document.getElementById("intake").value);
   let exercise = Number(document.getElementById("exercise").value);
   let water = Number(document.getElementById("water").value);
@@ -351,7 +361,76 @@ function updateStreak(data) {
   localStorage.setItem("streak", streak);
   document.getElementById("streak").innerText = "🔥 Streak: " + streak;
 }
+const quotes = [
+  "You will be FAT if you eat today, just put it off one more day.",
+  "You don't NEED food.",
+  "Fat people can't fit everywhere.",
+  "Guys will be able to pick you up without struggling.",
+  "You'll be able to run faster without all that extra weight holding you back.",
+  "People will remember you as the beautiful thin one.",
+  "If someone has to describe you, they'll say oh she weighs like 90, 100 lbs.",
+  "Guys will want to get to know you, not laugh at you and walk away.",
+  "Starving is an example of excellent willpower.",
+  "You will be able to see your beautiful, beautiful bones.",
+  "Bones are clean and pure. Fat is dirty and hangs on your bones like a parasite.",
+  "If you eat then you'll look like those disgusting, fat, ghetto and trailer-trash hookers on Jerry Springer.",
+  "The models that everyone claims are beautiful, the spitting image of perfection, are any of them fat? NO!",
+  "Too many people in the world are obese.",
+  "People who eat are selfish and unrealistic.",
+  "Only fat people are attracted to fat people. Do you want pigs to like you because you are one of them.",
+  "Anyone can have inner beauty but few can earn real beauty, inside as well as out.",
+  "You'll be able to move as quietly and skillfully as a spider.",
+  "Only thin people are graceful.",
+  "If you slap a fat person you can see a shockwave ripple over their skin. That's disgusting.",
+  "Do you want people to say for gods sake get off me you're crushing me!!! or you are sooo light ???",
+  "Underweight aka perfect body.",
+  "Ballerina? or beanbag?",
+  "I want to be light enough so a helium balloon could lift me and carry me to the clouds.",
+  "I want to walk in the snow and leave no footprints.",
+  "Starve off the parts you don't need. They're ugly and they drag you down.",
+  "Nothing cant be fixed with hunger and weight loss.",
+  "Saying no thanks to food is saying yes please to THIN!!!",
+  "Fat people are so huge, yet people look away from them as if they don't exist.",
+  "The only time people do notice a fat person is when they get in the way of that beautiful thin girl walking by (ok that sounds really horrible i know.)",
+  "Have you ever seen a person NOT notice a walking skeleton.",
+  "Nothing tastes as good as thin feels.",
+  "Is food more important that happiness in life? I think not!",
+  "Eating is conforming to everyone else's expectations.",
+  "When you start to get dizzy and weak you're almost there.",
+  "Hunger is your friend and it won't betray you like food.",
+  "Food is mean and sneaky. It tricks you into eating it and it works on you from the inside out making you fat, bloated, ugly and unhappy.",
+  "Think of anorexia as your secret weapon.",
+  "If you can name one reason to be fat, I'll name a million and one to be thin.",
+  "Thin people look good in ANY kind of clothes.",
+  "Food rots your teeth.",
+  "Puffy cheeks, double chins and thick ankles-- aren't attractive.",
+  "Fatty areas stretch and sag as you get older.",
+  "Ever seen the arms of a fat person wave hello or goodbye?",
+  "Eating little to nothing saves you money!",
+  "The average (middle class) American wastes OVER $8,000 a year on FOOD ALONE...it goes in one end and out the other. That sure is a lot of fat! No wonder so many Americans are obese and overweight!",
+  "Fat people make their country look bad.",
+  "Big people sweat more and they smell bad.",
+  "Fat people die earlier.",
+  "You'll be the envy of all the other girls.",
+  "All of the guys will want you.",
+  "You're less likely to get food poisoning.",
+  "You won't be exposed to all the chemicals and pesticides they put in food today.",
+  "You won't get sweaty on hot days.",
+  "The word fat will only apply to you in a sarcastic way.",
+  "No one wants to see a fat person dance.",
+  "Beauty Queen? or Dairy Queen?",
+];
 
+function getRandomQuote() {
+  return quotes[Math.floor(Math.random() * quotes.length)];
+}
+
+function renderQuote() {
+  let quoteEl = document.getElementById("quote");
+  if (!quoteEl) return;
+
+  quoteEl.innerText = getRandomQuote();
+}
 window.onload = function () {
   let data = JSON.parse(localStorage.getItem("history")) || {};
   let streak = localStorage.getItem("streak") || 0;
@@ -359,10 +438,12 @@ window.onload = function () {
   document.getElementById("streak").innerText = "🔥 Streak: " + streak;
 
   renderHistory(data);
+  renderQuote(); // 👈 add this
 };
 
 
-  </script>
+  <!-- ===================== -->
+  <script src=""></script>
 
 </body>
 </html>
