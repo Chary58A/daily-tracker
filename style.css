@@ -1,0 +1,254 @@
+/* =========================
+   BASE
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(#1a1a22, #2a1f2f);
+  color: #e5e5e5;
+
+  margin: 0;
+  padding: 30px 20px 60px 20px;
+
+  text-align: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 36px;
+  color: #d6b3ff;
+  margin: 20px 0;
+}
+
+/* =========================
+   NAVBAR (GLASS PILL)
+========================= */
+
+.navbar {
+  position: sticky;
+  top: 15px;
+
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+
+  width: fit-content;
+  margin: 0 auto;
+
+  padding: 10px 14px;
+
+  background: rgba(18, 15, 24, 0.55);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(214, 179, 255, 0.2);
+  border-radius: 999px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+  z-index: 1000;
+}
+
+.navbar a {
+  color: #d6b3ff;
+  text-decoration: none;
+  font-size: 13px;
+  opacity: 0.8;
+
+  transition: 0.2s;
+}
+
+.navbar a:hover {
+  color: #ec4899;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+  max-width: 500px;
+  margin: auto;
+
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+
+  border-radius: 20px;
+  border: 1px solid #3a2a40;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+  background: linear-gradient(#2a2230, #1c1c24);
+  padding: 12px;
+
+  margin-bottom: 10px;
+
+  border-radius: 12px;
+  border: 1px solid #4a3a55;
+
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(214, 179, 255, 0.4);
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h3 {
+  font-size: 13px;
+  color: #c084fc;
+  margin: 0 0 6px 0;
+}
+
+/* =========================
+   TEXT INSIDE CARDS
+========================= */
+
+.card p {
+  font-size: 12px;
+  color: #d1d1d1;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* =========================
+   SELECT DROPDOWNS
+========================= */
+
+select {
+  width: 100%;
+  padding: 8px;
+
+  border-radius: 8px;
+
+  background: #120f18;
+  color: #fff;
+
+  border: 1px solid #4a3a55;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+  width: 100%;
+  padding: 12px;
+
+  border-radius: 12px;
+  border: none;
+
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  color: white;
+
+  font-size: 15px;
+
+  margin-top: 12px;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+/* =========================
+   RESULT TEXT
+========================= */
+
+#result {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #f9a8d4;
+}
+
+/* =========================
+   HISTORY
+========================= */
+
+#history div {
+  font-size: 12px;
+  padding: 6px 0;
+
+  border-bottom: 1px solid #3a2a40;
+  opacity: 0.85;
+}
+
+/* =========================
+   FULL WIDTH (REALITY CHECK)
+========================= */
+
+.full-width {
+  width: 100%;
+
+  margin: 20px 0;
+
+  background: linear-gradient(#2a2230, #1c1c24);
+  border-radius: 12px;
+
+  border: 1px solid #4a3a55;
+
+  padding: 12px;
+
+  text-align: left;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  body {
+    padding: 30px 10px 60px 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 900px) {
+  .container {
+    max-width: 600px;
+  }
+}

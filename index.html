@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Daily Ritual</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="reasons.html">Reasons</a>
+    <a href="tips.html">Self-control Tips</a>
+    <a href="reality.html">Reality Check</a>
+  </nav>
+
+  <h1>✧ My Daily Ritual ✧</h1>
+
+  <!-- TOP CARDS -->
+  <div class="card">
+    <h3>✨ Motivational Quotes</h3>
+    <p id="motivation">Loading...</p>
+  </div>
+
+  <div class="card">
+    <h3>🧠 Reasons</h3>
+    <p id="reason">Loading...</p>
+  </div>
+
+  <div class="card">
+    <h3>⚡ Self-control Tips</h3>
+    <p id="tip">Loading...</p>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="container">
+
+    <h3 id="streak">🔥 Streak: 0</h3>
+
+    <!-- HOW TO USE -->
+    <div class="card">
+      <h3>How to use</h3>
+      <p style="opacity:0.6;">
+        This is a point-based system. You earn points from calorie intake, exercise, water, sleep, and bonus actions.
+        Start with 20 points per day and increase gradually over time.
+      </p>
+    </div>
+
+    <!-- INTAKE -->
+    <div class="card">
+      <h3>Calorie Intake</h3>
+      <select id="intake">
+        <option value="10">0-200 (10 pts)</option>
+        <option value="8">201-350 (8 pts)</option>
+        <option value="5">351-500 (5 pts)</option>
+        <option value="3">501-600 (3 pts)</option>
+        <option value="1">601-750 (1 pt)</option>
+        <option value="0">over 750 (0 pts)</option>
+      </select>
+    </div>
+
+    <!-- EXERCISE -->
+    <div class="card">
+      <h3>Exercise</h3>
+      <select id="exercise">
+        <option value="0">none (0)</option>
+        <option value="2">15 minutes (2)</option>
+        <option value="5">30 minutes (5)</option>
+        <option value="8">45 minutes (8)</option>
+        <option value="10">1+ hours (10)</option>
+        <option value="2">1 hour bicycle / 45 min walk (bonus +2)</option>
+      </select>
+    </div>
+
+    <!-- WATER -->
+    <div class="card">
+      <h3>Water Intake</h3>
+      <select id="water">
+        <option value="0">0 glasses</option>
+        <option value="1">1 glass</option>
+        <option value="2">2 glasses</option>
+        <option value="3">3 glasses</option>
+        <option value="4">4 glasses</option>
+        <option value="6">5 glasses</option>
+        <option value="7">6 glasses</option>
+        <option value="8">7 glasses</option>
+        <option value="9">8 glasses</option>
+        <option value="10">9 glasses</option>
+      </select>
+    </div>
+
+    <!-- SLEEP -->
+    <div class="card">
+      <h3>Sleeping Hours</h3>
+      <select id="sleep">
+        <option value="10">8+ hours</option>
+        <option value="8">7 hours</option>
+        <option value="7">6 hours</option>
+        <option value="5">5 hours</option>
+        <option value="4">4 hours</option>
+        <option value="2">3 hours</option>
+        <option value="0">2 hours or less</option>
+      </select>
+    </div>
+
+    <!-- BONUS -->
+    <div class="card">
+      <h3>Bonus</h3>
+      <select id="bonus">
+        <option value="0">None (0)</option>
+        <option value="3">Updating your journal or site (+3)</option>
+        <option value="2">No binging (+2)</option>
+        <option value="2">Posting thinspiration (+2)</option>
+        <option value="2">Recording calories (+2)</option>
+      </select>
+    </div>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <h2 id="result">Score: 0</h2>
+
+    <!-- HISTORY -->
+    <div class="card">
+      <h3>📅 History</h3>
+      <div id="history"></div>
+    </div>
+
+  </div>
+
+  <!-- REALITY CHECK -->
+  <div class="card full-width" id="reality">
+    <h3>🤡 Reality Check</h3>
+    <p id="funny">Loading...</p>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
